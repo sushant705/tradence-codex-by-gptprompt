@@ -116,23 +116,25 @@ These trade-offs keep momentum while preserving a scalable architecture for incr
 
 ## How to run the project
 
+> Current repository state: source modules are present, but app bootstrap/build tooling is not included yet.
+
 ### Prerequisites
 - Node.js 20+
 - npm 10+
 
-### Run locally
+### Expected next setup steps
+1. Add app bootstrap (`package.json`, bundler config such as Vite/Next).
+2. Install dependencies (example):
+   - `react`, `react-dom`, `typescript`
+   - `reactflow`
+3. Wire an app entry point that mounts the modules.
+
+### Typical commands (once bootstrap files are added)
 ```bash
 npm install
 npm run dev
-```
-
-Open the URL shown by Vite (default: `http://localhost:5173`).
-
-### Useful commands
-```bash
 npm run typecheck
-npm run build
-npm run preview
+npm run test
 ```
 
 ---
