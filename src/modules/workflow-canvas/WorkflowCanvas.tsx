@@ -1,12 +1,5 @@
 import { memo } from 'react';
-import ReactFlow, {
-  Background,
-  Controls,
-  MiniMap,
-  type EdgeTypes,
-  type FitViewOptions,
-  type NodeTypes,
-} from 'reactflow';
+import ReactFlow, { Background, Controls, MiniMap, type FitViewOptions } from 'reactflow';
 
 import type { UseWorkflowCanvasResult } from './types';
 
@@ -17,21 +10,15 @@ const DEFAULT_FIT_VIEW_OPTIONS: FitViewOptions = {
 export interface WorkflowCanvasProps {
   state: UseWorkflowCanvasResult;
   fitView?: boolean;
-  nodeTypes?: NodeTypes;
-  edgeTypes?: EdgeTypes;
 }
 
 const WorkflowCanvasComponent = ({
   state,
   fitView = true,
-  nodeTypes,
-  edgeTypes,
 }: WorkflowCanvasProps) => (
   <ReactFlow
     nodes={state.nodes}
     edges={state.edges}
-    nodeTypes={nodeTypes}
-    edgeTypes={edgeTypes}
     onNodesChange={state.onNodesChange}
     onEdgesChange={state.onEdgesChange}
     onConnect={state.onConnect}
